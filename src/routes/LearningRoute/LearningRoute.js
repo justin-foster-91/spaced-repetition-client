@@ -14,12 +14,19 @@ class LearningRoute extends Component {
       if (!res.ok) {
         Promise.reject(res.error)
       }
-      return res.json()
+      return res.json();
     })
     .then(res => {
-      this.setState({ currentWord: res})
+      this.setState({ currentWord: res});
     })
-    .catch(error => console.error(error))
+    .catch(error => console.error(error));
+  }
+
+  handleSubmit = ev => {
+    ev.preventDefault();
+    let { guess } = ev.target;
+    guess = guess.value;
+    console.log(guess)
   }
   
   render() {
@@ -32,13 +39,13 @@ class LearningRoute extends Component {
         <h3>Translate the word:</h3>
         {/* Pull the word from DB */}
     <h1>{currentWord}</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <fieldset>
             <legend>Submit Guess</legend>
             <p>What is the translation for this word?</p>
-            <label>Guess: </label>
-            <input></input><br/>
-            <button>Submit</button>
+            <label htmlFor='guess'>Guess: </label>
+            <input id='guess' name='guess' type='text'></input><br/>
+            <button type='submit'>Submit</button>
           </fieldset>
         </form>
         <p>Your total score is: {totalScore} correct </p>

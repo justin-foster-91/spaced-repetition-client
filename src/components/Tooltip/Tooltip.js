@@ -7,7 +7,6 @@ class Tooltip extends React.Component {
     const { correct_count, incorrect_count } = this.props.currentWord
     return(
       <span className='Tooltip'>
-        {console.log(this.props)}
         <span 
           className='Tooltip-content'
           style={{ color: this.props.color }}
