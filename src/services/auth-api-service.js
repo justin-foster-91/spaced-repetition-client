@@ -58,6 +58,17 @@ const AuthApiService = {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
     })
+  },
+  postGuess(guess, wordId) {
+    console.log(guess, wordId)
+    return fetch(`${config.API_ENDPOINT}/words/${wordId}/guess`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({guess: guess})
+    })
   }
 
 }
