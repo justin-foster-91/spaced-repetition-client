@@ -1,8 +1,30 @@
 import React, { Component } from 'react'
 import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
+import AuthApiService from '../../services/auth-api-service'
 
 class DashboardRoute extends Component {
+    state = {
+      words: [],
+      language: {}
+    }
+
+    componentDidMount(){
+      AuthApiService.getWords()
+      .then(res => {
+        if (!res.ok) {
+          Promise.reject(res.error)
+        }
+        return res.json()
+      })
+      .then(res => {
+        this.setState({ words : res.words, language: res.language})
+      })
+      .catch(error => console.error(error))
+    
+    }
+
+
   render() {
     return (
       <div>
