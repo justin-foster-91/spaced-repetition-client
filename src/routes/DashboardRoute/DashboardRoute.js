@@ -32,24 +32,24 @@ class DashboardRoute extends Component {
   }
 
   render() {
+    const words = this.state.words ? this.state.words : [];
+    const wordListDisplay = words.map(word => (<li>{word.translation}</li>))
     return (
       <div>
         <section className='dashBoard-menu'>
-          <h2>Japanese</h2>
+          <h2>{this.state.language.name}</h2>
           <Button onClick={() => this.handleClickStart()}
           >Start Practice!</Button>
         </section>
 
         <section className='dashBoard-userscore'>
-          <p>Total Score: 11000 out of 22222 correct </p>
+          <p>Total Score: {this.state.language.total_score} </p>
         </section>
         
         <section className='dashBoard-course-overview'>
+          <h2>Practice Words:</h2>
           <ul>
-            <li>Hello</li>
-            <li>Goodbye</li>
-            <li>What time is it?</li>
-            <li>Help</li>
+            {wordListDisplay}
           </ul>
         </section>
       </div>
