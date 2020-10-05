@@ -6,7 +6,8 @@ class LearningRoute extends Component {
 
   state = {
     words: [],
-    language: {}
+    language: {},
+    currentWord: {}
   }
 
   componentDidMount(){
@@ -21,6 +22,7 @@ class LearningRoute extends Component {
       this.setState({ words : res.words, language: res.language})
     }).then (res => {
       AuthApiService.getHead()
+      .then(res => res.json())
       .then(res => console.log(res))
     })
     .catch(error => console.error(error))
