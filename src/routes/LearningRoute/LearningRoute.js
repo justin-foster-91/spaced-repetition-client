@@ -23,7 +23,10 @@ class LearningRoute extends Component {
   }
   
   render() {
-    let currentWord = this.state.currentWord.nextWord ? this.state.currentWord.nextWord : ''
+    let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
+    let totalScore = this.state.currentWord ? this.state.currentWord.totalScore : '';
+    let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
+    let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
     return (
       <section>
         <h3>Translate the word:</h3>
@@ -38,9 +41,9 @@ class LearningRoute extends Component {
             <button>Submit</button>
           </fieldset>
         </form>
-        <p>Your total score is: %correct </p>
-        <p>You have answered this word correctly X times.</p>
-        <p>You have answered this word incorrectly X times.</p>
+        <p>Your total score is: {totalScore} correct </p>
+        <p>You have answered this word correctly {correctlyAnswered} times.</p>
+        <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
       </section>
     );
   }
