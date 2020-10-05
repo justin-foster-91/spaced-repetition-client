@@ -22,9 +22,7 @@ class DashboardRoute extends Component {
         this.setState({ words : res.words, language: res.language})
       })
       .catch(error => console.error(error))
-    
     }
-
 
   handleClickStart() {
     const { history } = this.props
@@ -46,10 +44,10 @@ class DashboardRoute extends Component {
         
         <section className='dashBoard-course-overview'>
           <ul>
-            <li>Hello</li>
-            <li>Goodbye</li>
-            <li>What time is it?</li>
-            <li>Help</li>
+            {console.log(this.state.words)}
+            {this.state.words.map((word) => {
+              return <li key={word.id}>{word.translation}</li>
+            })}
           </ul>
         </section>
       </div>

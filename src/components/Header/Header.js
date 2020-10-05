@@ -43,7 +43,7 @@ class Header extends Component {
       <header>
         <h1 className='Title'>
           <Link to='/'>
-            Spaced repetition
+            Spaced Repetition
           </Link>
         </h1>
         <div className='NavBar'>
