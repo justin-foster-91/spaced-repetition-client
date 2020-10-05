@@ -5,13 +5,11 @@ import AuthApiService from '../../services/auth-api-service'
 class LearningRoute extends Component {
 
   state = {
-    words: [],
-    language: {},
     currentWord: {}
   }
 
   componentDidMount(){
-    AuthApiService.getWords()
+    AuthApiService.getHead()
     .then(res => {
       if (!res.ok) {
         Promise.reject(res.error)
@@ -19,22 +17,18 @@ class LearningRoute extends Component {
       return res.json()
     })
     .then(res => {
-      this.setState({ words : res.words, language: res.language})
-    }).then (res => {
-      AuthApiService.getHead()
-      .then(res => res.json())
-      .then(res => console.log(res))
+      this.setState({ currentWord: res})
     })
     .catch(error => console.error(error))
   }
   
   render() {
-    console.log(this.state)
+    let currentWord = this.state.currentWord.nextWord ? this.state.currentWord.nextWord : ''
     return (
       <section>
         <h3>Translate the word:</h3>
         {/* Pull the word from DB */}
-        <h1>Hello</h1>
+    <h1>{currentWord}</h1>
         <form>
           <fieldset>
             <legend>Submit Guess</legend>
