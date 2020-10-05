@@ -38,7 +38,7 @@ class DashboardRoute extends Component {
       </Tooltip>
     </li>))
     return (
-      <div>
+      <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
           <h2>{this.state.language.name}</h2>
           <Button 

@@ -10,6 +10,11 @@ body {
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed;
+  background-position: 50% 50%; 
+  /* background-image: url('./Images/670320.jpg'); */
+  background-image: url('./Images/670609.jpg');
+  /* background-image: url('./Images/763586.jpg'); */
 }
 
 :root {

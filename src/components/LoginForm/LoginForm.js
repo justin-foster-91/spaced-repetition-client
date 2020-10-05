@@ -48,6 +48,7 @@ class LoginForm extends Component {
         className='LoginForm'
         onSubmit={this.handleSubmit}
       >
+        <div className='FormBox'>
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
@@ -76,6 +77,7 @@ class LoginForm extends Component {
         <Button type='submit'>
           Login
         </Button>
+        </div>
       </form>
     )
   }
