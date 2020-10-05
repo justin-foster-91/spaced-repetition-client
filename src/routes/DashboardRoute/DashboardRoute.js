@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
 import AuthApiService from '../../services/auth-api-service'
+import Tooltip from '../../components/Tooltip/Tooltip'
 
 class DashboardRoute extends Component {
     state = {
@@ -31,7 +31,13 @@ class DashboardRoute extends Component {
 
   render() {
     const words = this.state.words ? this.state.words : [];
-    const wordListDisplay = words.map(word => (<li key={word.id}>{word.translation}</li>))
+    const wordListDisplay = words.map(word => (
+    <li key={word.id}>
+      {/* Tooltip currently set as Japanese until we have correct/incorrect count. */}
+      <Tooltip currentWord={word}>
+        {word.translation}
+      </Tooltip>
+    </li>))
     return (
       <div>
         <section className='dashBoard-menu'>

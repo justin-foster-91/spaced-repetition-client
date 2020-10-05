@@ -5,3 +5,8 @@
   right: 0;
   text-align: right;
 }
+
+.username {
+  margin: 2px;
+  background: rgba(167, 167, 167, 0.5);
+}
