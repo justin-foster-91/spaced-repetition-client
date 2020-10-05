@@ -50,7 +50,16 @@ const AuthApiService = {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
     })
+  },
+  getHead() {
+    return fetch(`${config.API_ENDPOINT}/language/head`, {
+      method: 'GET',
+      headers: {
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
   }
+
 }
 
 export default AuthApiService

@@ -1,8 +1,33 @@
 import React, { Component } from 'react'
 import './LearningRoute.css'
+import AuthApiService from '../../services/auth-api-service'
 
 class LearningRoute extends Component {
+
+  state = {
+    words: [],
+    language: {}
+  }
+
+  componentDidMount(){
+    AuthApiService.getWords()
+    .then(res => {
+      if (!res.ok) {
+        Promise.reject(res.error)
+      }
+      return res.json()
+    })
+    .then(res => {
+      this.setState({ words : res.words, language: res.language})
+    }).then (res => {
+      AuthApiService.getHead()
+      .then(res => console.log(res))
+    })
+    .catch(error => console.error(error))
+  }
+  
   render() {
+    console.log(this.state)
     return (
       <section>
         <h3>Translate the word:</h3>

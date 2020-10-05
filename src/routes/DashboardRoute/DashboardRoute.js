@@ -22,7 +22,6 @@ class DashboardRoute extends Component {
         this.setState({ words : res.words, language: res.language})
       })
       .catch(error => console.error(error))
-    
     }
 
 
@@ -33,13 +32,16 @@ class DashboardRoute extends Component {
 
   render() {
     const words = this.state.words ? this.state.words : [];
-    const wordListDisplay = words.map(word => (<li>{word.translation}</li>))
+    const wordListDisplay = words.map(word => (<li key={word.id}>{word.translation}</li>))
     return (
       <div>
         <section className='dashBoard-menu'>
           <h2>{this.state.language.name}</h2>
-          <Button onClick={() => this.handleClickStart()}
-          >Start Practice!</Button>
+          <Button 
+          onClick={() => this.handleClickStart()}
+          >
+            Start Practice!
+          </Button>
         </section>
 
         <section className='dashBoard-userscore'>
