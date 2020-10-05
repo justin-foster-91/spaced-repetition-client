@@ -33,7 +33,6 @@ class DashboardRoute extends Component {
     const words = this.state.words ? this.state.words : [];
     const wordListDisplay = words.map(word => (
     <li key={word.id}>
-      {/* Tooltip currently set as Japanese until we have correct/incorrect count. */}
       <Tooltip currentWord={word}>
         {word.translation}
       </Tooltip>
