@@ -1,0 +1,10 @@
+.NotFoundCard {
+  background: rgb(252, 164, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #333;
+  margin: 2%;
+  padding: 2%;
+  /* min-width: 300px;
+  flex-shrink: 1; */
+}
