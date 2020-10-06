@@ -4,6 +4,7 @@ import './AnswerResult.css'
 class AnswerResult extends Component {
   
   render() {
+    console.log(this.props)
     return (
       <section className='answerResults'>
         <h2>'Good try, but not quite right :('</h2>
