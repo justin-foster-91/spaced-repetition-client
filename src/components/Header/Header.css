@@ -4,9 +4,33 @@
   top: 0;
   right: 0;
   text-align: right;
+  font-weight: bold;
+}
+
+.NavLink {
+  /* color: rgb(226, 137, 211); */
+  background: rgb(254, 214, 255);
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .username {
   margin: 2px;
-  background: rgba(167, 167, 167, 0.5);
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(141, 185, 252);
+}
+
+.Title {
+  font-size: 300%;
+  font-style: oblique;
+  font-family: "Apple Chancery";
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+}
+
+.TitleLink {
+  color: rgb(226, 137, 211);
 }

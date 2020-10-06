@@ -1,5 +1,23 @@
 .RegistrationForm {
-  margin: 2%;
-  background: rgba(202, 108, 194, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 3%;
+  padding: 2%;
+  background: rgb(252, 164, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333;
+}
 
+.RegistrationForm div {
+  margin: 2px;
+}
+
+.Already {
+  color: rgb(0, 47, 255);
+}
+
+.submit {
+  box-shadow: 0 0 1px #333;
 }
