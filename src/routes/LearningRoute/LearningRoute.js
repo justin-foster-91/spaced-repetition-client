@@ -4,16 +4,18 @@ import WordApiService from '../../services/word-api-service'
 import AnswerResult from '../../components/AnswerResult/AnswerResult'
 
 class LearningRoute extends Component {
-
-  state = {
-    currentWord: {},
-    didSubmit: false,
-    rightAnswer: '',
-    userAnswer: '',
-    isCorrect: null,
-    totalScore: 0
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentWord: {},
+      didSubmit: false,
+      rightAnswer: '',
+      userAnswer: '',
+      isCorrect: null,
+      totalScore: 0
+    }
   }
-
+  
   componentDidMount() {
     WordApiService.getHead()
       .then(res => {
@@ -47,9 +49,7 @@ class LearningRoute extends Component {
       .catch(error => console.log(error))
   }
 
-  handleNextTryClick = ev => {
-    ev.preventDefault();
-    
+  handleNextTryClick = () => {
     this.setState({
       didSubmit: false,
       isCorrect: null,
