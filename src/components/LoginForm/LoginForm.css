@@ -1,5 +1,5 @@
 .LoginForm, div{
-  margin-top: 3%;
+  /* margin-top: 3%; */
 }
 
 .Button {
@@ -7,5 +7,22 @@
 }
 
 .FormBox {
-  background: rgba(202, 108, 194, 0.5);
+  min-width: 110%;
+  padding: 2%;
+  background: rgb(252, 164, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333;
+}
+
+.FormRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.submit {
+  box-shadow: 0 0 1px #333;
 }

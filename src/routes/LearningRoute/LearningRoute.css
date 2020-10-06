@@ -1,5 +1,32 @@
-.learningProgress {
-  background-color: pink;
-  width: 90%;
-  margin: auto;
+.GuessForm {
+  background: rgb(252, 164, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #333;
+}
+
+.currentWord {
+  background: rgb(253, 193, 255, .6);
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 3% 20% 3% 20%;
+  padding: 2%;
+}
+
+.Scores {
+  border: 2px solid black;
+  border-radius: 5px;
+  background: rgba(83, 92, 221, 0.8);
+  color: #fff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin: 20px;
+}
+
+.LearningTitle {
+  font-size: 150%;
+  color: rgb(92, 157, 255);
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000000;
 }

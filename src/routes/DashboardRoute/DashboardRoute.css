@@ -6,8 +6,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(202, 108, 194, 0.5);
+
 }
+
+.dashBoard-course-overview h2, .wordList {
+  background: rgb(253, 193, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 2% 5% 2% 5%;
+}
+
+.Language {
+  font-family: 'Goudy Old Style';
+  font-size: 300%;
+  margin: 3%;
+  color: rgb(92, 157, 255);
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000000;
+}
+
+.StartButton {
+  box-shadow: 0 0 3px #333;
+  /* font-weight: 500; */
+}
+
+.dashBoard-userscore p {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(92, 157, 255);
+  padding: 2px;
+  margin: 5% 15% 5% 15%;
+}
+
+/* .wordList {
+  background: rgb(253, 193, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+} */
 
 section, p {
   text-align: center;

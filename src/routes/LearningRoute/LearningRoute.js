@@ -49,17 +49,18 @@ class LearningRoute extends Component {
 
     
     return (
-      <section>
-        <h3>Translate the word:</h3>
-        {/* Pull the word from DB */}
-    <h1>{currentWord}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <fieldset>
-            <legend>Submit Guess</legend>
+      <section className='LearningDisplay'>
+        <div className='wordCard'>
+          <h3 className='LearningTitle'>Translate the word:</h3>
+          <h1 className='currentWord'>{currentWord}</h1>
+        </div>
+        <form onSubmit={this.handleSubmit} >
+          <fieldset className='GuessForm'>
+            {/* <legend>Submit Guess</legend> */}
             <p>What is the translation for this word?</p>
             <label htmlFor='guess'>Guess: </label>
             <input id='guess' name='guess' type='text'></input><br/>
-            <button type='submit'>Submit</button>
+            <button type='submit' className='submit'>Submit</button>
           </fieldset>
         </form>
         <AnswerResult/>
@@ -67,8 +68,13 @@ class LearningRoute extends Component {
         <p>Your total score is: {totalScore} correct </p>
         <p>You have answered this word correctly {correctlyAnswered} times.</p>
         <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
-        </section>
       </section>
+        <section className='Scores'>
+          <p>Your total score is: {totalScore} correct </p>
+          <p>You have answered this word correctly {correctlyAnswered} times.</p>
+          <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
+          </section>
+        </section>
     );
   }
 }

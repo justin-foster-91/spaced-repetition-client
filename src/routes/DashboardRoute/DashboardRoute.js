@@ -40,9 +40,10 @@ class DashboardRoute extends Component {
     return (
       <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
-          <h2>{this.state.language.name}</h2>
+          <h1 className='Language'>{this.state.language.name}</h1>
           <Button 
-          onClick={() => this.handleClickStart()}
+            className='StartButton'
+            onClick={() => this.handleClickStart()}
           >
             Start Practice!
           </Button>
@@ -54,7 +55,7 @@ class DashboardRoute extends Component {
         
         <section className='dashBoard-course-overview'>
           <h2>Practice Words:</h2>
-          <ul>
+          <ul className='wordList'>
             {wordListDisplay}
           </ul>
         </section>
