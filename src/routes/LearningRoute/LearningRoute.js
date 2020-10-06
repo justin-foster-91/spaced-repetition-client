@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import './LearningRoute.css'
 import WordApiService from '../../services/word-api-service'
+import AnswerResult from '../../components/AnswerResult/AnswerResult'
 
 class LearningRoute extends Component {
 
   state = {
-    currentWord: {}
+    currentWord: {},
+    didSubmit: false,
+    rightAnswer: '',
+    userAnswer: '',
+    isCorrect: null, 
   }
 
   componentDidMount(){
@@ -27,14 +32,22 @@ class LearningRoute extends Component {
     let { guess } = ev.target;
     guess = guess.value;
     WordApiService.postGuess(guess, this.state.currentWord.id)
-    console.log("LearningRoute -> this.state.currentWord", this.state.currentWord)
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+      this.setState({ isCorrect: res.isCorrect})
+    })
+    .catch(error => console.log(error))
   }
   
   render() {
+    console.log(this.state.currentWord)
     let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
     let totalScore = this.state.currentWord ? this.state.currentWord.totalScore : '';
     let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
+
+    
     return (
       <section>
         <h3>Translate the word:</h3>
@@ -49,9 +62,12 @@ class LearningRoute extends Component {
             <button type='submit'>Submit</button>
           </fieldset>
         </form>
+        <AnswerResult/>
+        <section className='learningProgress'>
         <p>Your total score is: {totalScore} correct </p>
         <p>You have answered this word correctly {correctlyAnswered} times.</p>
         <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
+        </section>
       </section>
     );
   }

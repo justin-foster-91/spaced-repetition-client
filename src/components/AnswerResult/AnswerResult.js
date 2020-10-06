@@ -4,11 +4,9 @@ import './AnswerResult.css'
 class AnswerResult extends Component {
   
   render() {
-    console.log(this.state)
     return (
-      <section>
-        <h2>{'Good try, but not quite right :('}</h2>
-        {/* Pull the word and info from previous page */}
+      <section className='answerResults'>
+        <h2>'Good try, but not quite right :('</h2>
         <h1>Hello</h1>
         <div className='feedback'>
           <p>The correct translation for -original- was 
@@ -17,7 +15,7 @@ class AnswerResult extends Component {
         <button>Try another word.</button>
         <p>Your total score is: %correct </p>
       </section>
-    );
+    )
   }
 }
 
