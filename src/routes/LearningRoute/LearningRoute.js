@@ -83,8 +83,8 @@ class LearningRoute extends Component {
         </section>
         <form onSubmit={this.handleSubmit} >
           <fieldset className={`GuessForm ${hiddenSubmission}`}>
-            <legend>Guess Submission</legend>
-            <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+            <legend className='legend'>Guess Submission</legend>
+            <label htmlFor='learn-guess-input'>What's the translation for this word?</label><br/>
             <input id='learn-guess-input' name='guess' type='text' required></input><br />
             <button type='submit' className='submit'>Submit your answer</button>
           </fieldset>
@@ -97,7 +97,7 @@ class LearningRoute extends Component {
               was <span className='greenTea'>{translation}</span> <br />
               and you chose {userGuess}</p>
             </div>
-            <button onClick={this.handleNextTryClick}>Try another word.</button>
+            <button onClick={this.handleNextTryClick} className='submit'>Try another word.</button>
             <p className='DisplayScore'>Your total score is: {totalScore}</p>
           </section>
         </div>

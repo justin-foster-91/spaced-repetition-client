@@ -26,4 +26,5 @@
 .Tooltip:hover > .Tooltip-message {
   opacity: 1;
   visibility: visible;
+  
 }

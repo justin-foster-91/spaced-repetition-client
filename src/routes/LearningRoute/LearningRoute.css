@@ -1,10 +1,8 @@
 .currentWord {
-  background: rgb(253, 193, 255, .6);
   border: 2px solid black;
   border-radius: 5px;
-  margin: 3% 5% 3% 5%;
-  padding: 2%;
   font-size: 19px;
+  padding: 1%;
 }
 
 .GuessForm {
@@ -69,4 +67,17 @@ legend {
 .strawberry {
   color: #E50D31;
   font-weight: bold;
+}
+
+.wordCard {
+  background: rgb(253, 193, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 3% 5% 3% 5%;
+  padding: 0;
+}
+
+.legend {
+  border: 2px solid black;
+  border-radius: 5px;
 }
