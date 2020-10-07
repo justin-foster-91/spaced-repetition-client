@@ -18,7 +18,7 @@ const WordApiService = {
       },
     })
   },
-  postGuess(guess, wordId) {
+  postGuess(guess) {
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {

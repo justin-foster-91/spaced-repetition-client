@@ -98,7 +98,7 @@ class LearningRoute extends Component {
               was <span className='greenTea'>{translation}</span> <br/>
               and you chose {userGuess}</p>
             </div>
-            <button onClick={this.handleNextTryClick} class='submit'>Try another word.</button>
+            <button onClick={this.handleNextTryClick} className='submit'>Try another word.</button>
             <p className='answerResults-paragraph'>Your total score is: {totalScore} correct </p>
           </section>
         </div>
