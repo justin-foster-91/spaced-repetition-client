@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './LearningRoute.css'
 import WordApiService from '../../services/word-api-service'
-import AnswerResult from '../../components/AnswerResult/AnswerResult'
 
 class LearningRoute extends Component {
   constructor(props) {

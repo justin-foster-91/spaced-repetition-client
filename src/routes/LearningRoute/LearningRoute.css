@@ -53,6 +53,10 @@ legend {
   padding: 5px;
   max-width: 90%;
   margin: auto;
+  background: rgb(252, 164, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #333;
 }
 .bold {
   font-weight: bold;
