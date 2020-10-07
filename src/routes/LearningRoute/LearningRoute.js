@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './LearningRoute.css'
-import WordApiService from '../../services/word-api-service'
-import AnswerResult from '../../components/AnswerResult/AnswerResult'
+import AuthApiService from '../../services/auth-api-service'
 
 class LearningRoute extends Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class LearningRoute extends Component {
   }
   
   getHead() {
-    WordApiService.getHead()
+    AuthApiService.getHead()
       .then(res => {
         if (!res.ok) {
           Promise.reject(res.error)
@@ -38,7 +37,7 @@ class LearningRoute extends Component {
     ev.preventDefault();
     let { guess } = ev.target;
     guess = guess.value;
-    WordApiService.postGuess(guess, this.state.currentWord.id)
+    AuthApiService.postGuess(guess, this.state.currentWord.id)
       .then(res => res.json())
       .then(res => {
         console.log(res)
