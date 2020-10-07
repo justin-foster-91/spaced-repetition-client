@@ -9,7 +9,7 @@
 
 }
 
-.dashBoard-course-overview h2, .wordList {
+.dashBoard-course-overview h3, .wordList {
   background: rgb(253, 193, 255);
   border: 2px solid black;
   border-radius: 5px;
