@@ -69,6 +69,9 @@ class DashboardRoute extends Component {
             {wordListDisplay}
           </ul>
         </section>
+
+        <h4></h4>
+        
       </div>
     );
   }

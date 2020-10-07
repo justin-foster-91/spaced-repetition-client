@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './LearningRoute.css'
 import WordApiService from '../../services/word-api-service'
+import AnswerResults from '../../components/AnswerResult/AnswerResult'
 
 class LearningRoute extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class LearningRoute extends Component {
     WordApiService.postGuess(guess, this.state.currentWord.id)
       .then(res => res.json())
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({
           isCorrect: res.isCorrect,
           userAnswer: guess,
@@ -69,9 +70,6 @@ class LearningRoute extends Component {
     let totalScore = this.state.currentWord ? this.state.currentWord.totalScore : '';
     let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
-    let submissionFeedback = this.state.isCorrect
-      ? <h3 className='greenTea'>You were correct! :D</h3>
-      : <h3 className='strawberry'>Good try, but not quite right :(</h3>;
     let hiddenSubmission = this.state.didSubmit ? 'hidden' : '';
     let hiddenAnswerSection = !this.state.didSubmit ? 'hidden' : '';
     return (
@@ -89,18 +87,18 @@ class LearningRoute extends Component {
             <button type='submit' className='submit'>Submit your answer</button>
           </fieldset>
         </form>
-        <div className={`results ${hiddenAnswerSection}`}>
-          <section className='answerResults'>
-            {submissionFeedback}
-            <div className='feedback'>
-              <p className='answerResults-paragraph'>The correct translation for <span className="bold">{currentWord}</span> <br />
-              was <span className='greenTea'>{translation}</span> <br />
-              and you chose {userGuess}</p>
-            </div>
-            <button onClick={this.handleNextTryClick} className='submit'>Try another word.</button>
-            <p className='DisplayScore'>Your total score is: {totalScore}</p>
-          </section>
-        </div>
+        <section className='ResultDisplay '>
+          <AnswerResults 
+            hiddenAnswerSection={hiddenAnswerSection}
+            // submissionFeedback={submissionFeedback}
+            userGuess={userGuess}
+            translation={translation}
+            totalScore={totalScore}
+            handleNextTryClick={this.handleNextTryClick}
+            currentWord={currentWord}
+            isCorrect={this.state.isCorrect}
+          />
+        </section>
 
         <section className='Scores'>
           <p>You have answered this word correctly {correctlyAnswered} times.</p>
