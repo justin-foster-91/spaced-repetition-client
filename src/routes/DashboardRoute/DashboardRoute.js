@@ -39,7 +39,7 @@ class DashboardRoute extends Component {
           {word.original}
         </h4> */}
         <Tooltip currentWord={word} className='Tooltip'>
-          {word.original}
+          <h4>{word.original}</h4>
         </Tooltip>
 
       </li>))
