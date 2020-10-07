@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
-import AuthApiService from '../../services/auth-api-service'
+import WordApiService from '../../services/word-api-service'
 import Tooltip from '../../components/Tooltip/Tooltip'
 
 class DashboardRoute extends Component {
@@ -11,7 +11,7 @@ class DashboardRoute extends Component {
     }
 
     componentDidMount(){
-      AuthApiService.getWords()
+      WordApiService.getWords()
       .then(res => {
         if (!res.ok) {
           Promise.reject(res.error)
