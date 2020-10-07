@@ -8,15 +8,18 @@ Justin Foster (github: justin-foster-91)
 ### Resources
 Live Page: https://spaced-repetition-xi.vercel.app
 Client Repo: https://github.com/thinkful-ei-quail/SR-Client-Sonali-Justin
-Server Repo: https://github.com/thinkful-ei-quail/SR-server-SonaliN-JustinF
+
+You can visit the [Japanese Language SR app repo](https://github.com/thinkful-ei-quail/SR-server-SonaliN-JustinF) to view the back end code. 
 
 ### Demo Account
 Username: admin
 Password: pass
 
 ### Capstone Statement
-This 
 
+![Dashboard screenshot](/Images/Dashboard.jpg)
+
+![Learning page screenshot](/Images/Learning.jpg)
 
 #### Technology Used
 Front End: JavaScript, React, HTML5, CSS3 
