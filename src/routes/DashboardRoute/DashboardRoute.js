@@ -3,6 +3,7 @@ import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
 import WordApiService from '../../services/word-api-service'
 import Tooltip from '../../components/Tooltip/Tooltip'
+import { Link } from 'react-router-dom'
 
 class DashboardRoute extends Component {
   state = {
@@ -46,12 +47,15 @@ class DashboardRoute extends Component {
       <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
           <h2 className='Language'>{this.state.language.name}</h2>
-          <Button
+          {/* <Button
             className='StartButton'
             onClick={() => this.handleClickStart()}
           >
             Start Practice!
-          </Button>
+          </Button> */}
+          <Link to='/learn' className='StartButton'>
+            Start Practice!
+          </Link>
 
           <p>Total correct answers: {this.state.language.total_score}</p>
         </section>
