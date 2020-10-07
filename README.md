@@ -9,7 +9,7 @@ Justin Foster (github: justin-foster-91)
 ### Live Page
 https://spaced-repetition-xi.vercel.app
 
-You can visit the [Japanese Language SR app repo](https://github.com/thinkful-ei-quail/SR-server-SonaliN-JustinF) to view the front end code. 
+You can visit the [Japanese Language SR app repo](https://github.com/thinkful-ei-quail/SR-server-SonaliN-JustinF) to view the back end code. 
 
 ### Demo Account
 Username: admin
