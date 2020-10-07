@@ -36,7 +36,7 @@ class DashboardRoute extends Component {
     const wordListDisplay = words.map(word => (
       <li key={word.id}>
         <Tooltip currentWord={word} className='Tooltip'>
-          <h4>{word.original}</h4>
+          <h4 className='wordItem'>{word.original}</h4>
         </Tooltip>
       </li>))
     return (

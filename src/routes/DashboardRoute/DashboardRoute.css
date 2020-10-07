@@ -21,7 +21,7 @@
   font-family: 'Goudy Old Style';
   font-size: 300%;
   margin: 3%;
-  color: rgb(92, 157, 255);
+  color: rgb(0, 74, 185);
   text-shadow: -1px 1px 2px #000,
   1px 1px 2px #000,
   1px -1px 0 #000,
@@ -70,6 +70,12 @@ ul {
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 10px #333;
+}
+
+.wordItem {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
 }
 
 /* .Tooltip {
