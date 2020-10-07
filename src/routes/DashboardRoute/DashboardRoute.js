@@ -5,13 +5,13 @@ import WordApiService from '../../services/word-api-service'
 import Tooltip from '../../components/Tooltip/Tooltip'
 
 class DashboardRoute extends Component {
-    state = {
-      words: [],
-      language: {}
-    }
+  state = {
+    words: [],
+    language: {}
+  }
 
-    componentDidMount(){
-      WordApiService.getWords()
+  componentDidMount() {
+    WordApiService.getWords()
       .then(res => {
         if (!res.ok) {
           Promise.reject(res.error)
@@ -19,10 +19,10 @@ class DashboardRoute extends Component {
         return res.json()
       })
       .then(res => {
-        this.setState({ words : res.words, language: res.language})
+        this.setState({ words: res.words, language: res.language })
       })
       .catch(error => console.error(error))
-    }
+  }
 
   handleClickStart() {
     const { history } = this.props
@@ -31,28 +31,34 @@ class DashboardRoute extends Component {
 
   render() {
     const words = this.state.words ? this.state.words : [];
+    console.log(words)
     const wordListDisplay = words.map(word => (
-    <li key={word.id}>
-      <Tooltip currentWord={word}>
-        {word.translation}
-      </Tooltip>
-    </li>))
+      <li key={word.id}>
+        <h4>
+          {word.original}
+        </h4>
+        <Tooltip currentWord={word}>
+          {word.translation}
+        </Tooltip>
+
+      </li>))
     return (
       <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
-          <h1 className='Language'>{this.state.language.name}</h1>
-          <Button 
+          <h2 className='Language'>{this.state.language.name}</h2>
+          <Button
             className='StartButton'
             onClick={() => this.handleClickStart()}
           >
             Start Practice!
           </Button>
+
+          <p>Total correct answers: {this.state.language.total_score}</p>
         </section>
 
-        <section className='dashBoard-userscore'>
-          <p>Total Score: {this.state.language.total_score} </p>
-        </section>
-        
+        {/* <section className='dashBoard-userscore'>
+          <h2>Total Correct Answers: {this.state.language.total_score} </h2>
+        </section> */}
         <section className='dashBoard-course-overview'>
           <h2>Practice Words:</h2>
           <ul className='wordList'>

@@ -15,7 +15,7 @@ class LearningRoute extends Component {
       totalScore: 0
     }
   }
-  
+
   getHead() {
     WordApiService.getHead()
       .then(res => {
@@ -29,8 +29,8 @@ class LearningRoute extends Component {
       })
       .catch(error => console.error(error));
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     return this.getHead()
   }
 
@@ -62,50 +62,48 @@ class LearningRoute extends Component {
   }
 
   render() {
-    console.log(this.state.currentWord)
     let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
     let translation = this.state.didSubmit ? this.state.rightAnswer : '';
-    let userGuess = this.state.didSubmit 
-      ? <span className={this.state.isCorrect ? 'greenTea': 'strawberry'}>{this.state.userAnswer}</span>
+    let userGuess = this.state.didSubmit
+      ? <span className={this.state.isCorrect ? 'greenTea' : 'strawberry'}>{this.state.userAnswer}</span>
       : '';
     let totalScore = this.state.currentWord ? this.state.currentWord.totalScore : '';
     let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
-    let submissionFeedback = this.state.isCorrect 
-      ? <h2 className='greenTea'>You were correct! :D</h2> 
-      : <h2 className='strawberry'>Good try, but not quite right :(</h2>;
+    let submissionFeedback = this.state.isCorrect
+      ? <h3 className='greenTea'>You were correct! :D</h3>
+      : <h3 className='strawberry'>Good try, but not quite right :(</h3>;
     let hiddenSubmission = this.state.didSubmit ? 'hidden' : '';
     let hiddenAnswerSection = !this.state.didSubmit ? 'hidden' : '';
     return (
       <section className='LearningDisplay '>
-        <div className='wordCard'>
+        <section className='wordCard LearningTitle'>
           <h2 className='LearningTitle'>Translate the word:</h2>
-          <p className='currentWord'>{currentWord}</p>
-        </div>
+          <span className='currentWord'>{currentWord}</span>
+          <p className='DisplayScore'>Your total score is: {totalScore}</p>
+        </section>
         <form onSubmit={this.handleSubmit} >
           <fieldset className={`GuessForm ${hiddenSubmission}`}>
             <legend>Guess Submission</legend>
-            <p>What is the translation for this word?</p>
-            <label htmlFor='guess'>Guess: </label>
-            <input id='guess' name='guess' type='text'></input><br />
-            <button type='submit' className='submit'>Submit</button>
+            <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+            <input id='learn-guess-input' name='guess' type='text' required></input><br />
+            <button type='submit' className='submit'>Submit your answer</button>
           </fieldset>
         </form>
         <div className={`results ${hiddenAnswerSection}`}>
           <section className='answerResults'>
             {submissionFeedback}
             <div className='feedback'>
-              <p className='answerResults-paragraph'>The correct translation for <span className="bold">{currentWord}</span> <br/>
-              was <span className='greenTea'>{translation}</span> <br/>
+              <p className='answerResults-paragraph'>The correct translation for <span className="bold">{currentWord}</span> <br />
+              was <span className='greenTea'>{translation}</span> <br />
               and you chose {userGuess}</p>
             </div>
             <button onClick={this.handleNextTryClick}>Try another word.</button>
-            <p className='answerResults-paragraph'>Your total score is: {totalScore} correct </p>
+            <p className='DisplayScore'>Your total score is: {totalScore}</p>
           </section>
         </div>
 
         <section className='Scores'>
-          <p>Your total score is: {totalScore} correct </p>
           <p>You have answered this word correctly {correctlyAnswered} times.</p>
           <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
         </section>
