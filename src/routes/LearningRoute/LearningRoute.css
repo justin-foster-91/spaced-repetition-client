@@ -7,6 +7,7 @@
   text-shadow: none;
   font-weight: bold;
   box-shadow: 0 0 3px #333;
+  background: rgb(252, 164, 255);
 }
 
 .GuessForm {
@@ -21,6 +22,9 @@ legend {
   color: black;
   padding: 5px 10px;
   text-align: left;
+  font-size: small;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 .Scores {
@@ -33,7 +37,7 @@ legend {
 }
 
 .LearningTitle {
-  font-size: 150%;
+  font-size: 120%;
   color: rgb(0, 74, 185);
   text-shadow: -1px 1px 2px #000,
   1px 1px 2px #000,
@@ -60,9 +64,4 @@ legend {
   border-radius: 5px;
   margin: 3% 5% 3% 5%;
   padding: 0;
-}
-
-.legend {
-  border: 2px solid black;
-  border-radius: 5px;
 }
