@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Button from '../../components/Button/Button'
+// import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
 import WordApiService from '../../services/word-api-service'
 import Tooltip from '../../components/Tooltip/Tooltip'
@@ -35,11 +35,11 @@ class DashboardRoute extends Component {
     console.log(words)
     const wordListDisplay = words.map(word => (
       <li key={word.id}>
-        <h4>
+        {/* <h4>
           {word.original}
-        </h4>
+        </h4> */}
         <Tooltip currentWord={word}>
-          {word.translation}
+          {word.original}
         </Tooltip>
 
       </li>))

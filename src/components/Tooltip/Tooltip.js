@@ -4,7 +4,8 @@ import './Tooltip.css';
 class Tooltip extends React.Component {
 
   render() {
-    const { correct_count, incorrect_count } = this.props.currentWord
+    const { correct_count, incorrect_count, translation } = this.props.currentWord
+    // console.log("Tooltip -> render -> this.props.currentWord", this.props.currentWord)
     return(
       <span className='Tooltip'>
         <span 
@@ -14,6 +15,7 @@ class Tooltip extends React.Component {
           {this.props.children}
         </span>
         <div className='Tooltip-message'>
+          translation: {translation} <br/>
           correct answer count: {correct_count} <br/>
           incorrect answer count: {incorrect_count}
         </div>
