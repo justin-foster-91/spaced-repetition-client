@@ -54,7 +54,7 @@ class DashboardRoute extends Component {
             Start Practice!
           </Button> */}
           <Link to='/learn' className='StartButton'>
-            Start Practice!
+            Start practicing
           </Link>
 
           <p>Total correct answers: {this.state.language.total_score}</p>
@@ -64,7 +64,7 @@ class DashboardRoute extends Component {
           <h2>Total Correct Answers: {this.state.language.total_score} </h2>
         </section> */}
         <section className='dashBoard-course-overview'>
-          <h2>Practice Words:</h2>
+          <h3>Words to practice</h3>
           <ul className='wordList'>
             {wordListDisplay}
           </ul>
