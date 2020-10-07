@@ -31,7 +31,33 @@
   1px -1px 0 #000,
   -1px -1px 0 #000000;
 }
-
+.currentWord {
+  font-size: 1.5em;
+}
 .hidden {
   display: none;
+}
+
+.answerResults-paragraph {
+  max-width: 90%;
+  margin: auto;
+  min-height: 50px;
+  line-height: 1.6;
+}
+.answerResults {
+  padding: 5px;
+  max-width: 90%;
+  margin: auto;
+}
+.bold {
+  font-weight: bold;
+}
+.greenTea {
+  color: #356832;
+  font-weight: bold;
+}
+
+.strawberry {
+  color: #E50D31;
+  font-weight: bold;
 }
