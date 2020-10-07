@@ -35,43 +35,25 @@ class DashboardRoute extends Component {
     console.log(words)
     const wordListDisplay = words.map(word => (
       <li key={word.id}>
-        {/* <h4>
-          {word.original}
-        </h4> */}
         <Tooltip currentWord={word} className='Tooltip'>
           <h4>{word.original}</h4>
         </Tooltip>
-
       </li>))
     return (
       <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
           <h2 className='Language'>{this.state.language.name}</h2>
-          {/* <Button
-            className='StartButton'
-            onClick={() => this.handleClickStart()}
-          >
-            Start Practice!
-          </Button> */}
           <Link to='/learn' className='StartButton'>
             Start practicing
           </Link>
-
           <p>Total correct answers: {this.state.language.total_score}</p>
         </section>
-
-        {/* <section className='dashBoard-userscore'>
-          <h2>Total Correct Answers: {this.state.language.total_score} </h2>
-        </section> */}
         <section className='dashBoard-course-overview'>
           <h3>Words to practice</h3>
           <ul className='wordList'>
             {wordListDisplay}
           </ul>
         </section>
-
-        <h4></h4>
-        
       </div>
     );
   }

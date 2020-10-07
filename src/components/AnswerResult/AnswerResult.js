@@ -6,8 +6,8 @@ class AnswerResult extends Component {
   render() {
     let {hiddenAnswerSection, translation, userGuess, totalScore, currentWord} = this.props;
     let submissionFeedback = this.props.isCorrect
-    ? <h3 className='greenTea'>You were correct! :D</h3>
-    : <h3 className='strawberry'>Good try, but not quite right :(</h3>;
+    ? <div className='greenTea'>You were correct! :D</div>
+    : <div className='strawberry'>Good try, but not quite right :(</div>;
 
     return (
         <div className={`results ${hiddenAnswerSection}`}>
