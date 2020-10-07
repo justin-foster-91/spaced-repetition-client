@@ -84,7 +84,7 @@ class LearningRoute extends Component {
         </div>
         <form onSubmit={this.handleSubmit} >
           <fieldset className={`GuessForm ${hiddenSubmission}`}>
-            {/* <legend>Submit Guess</legend> */}
+            <legend>Guess Submission</legend>
             <p>What is the translation for this word?</p>
             <label htmlFor='guess'>Guess: </label>
             <input id='guess' name='guess' type='text'></input><br />
