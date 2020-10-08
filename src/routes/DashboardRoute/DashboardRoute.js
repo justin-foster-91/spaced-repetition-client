@@ -32,7 +32,6 @@ class DashboardRoute extends Component {
 
   render() {
     const words = this.state.words ? this.state.words : [];
-    console.log(words)
     const wordListDisplay = words.map(word => (
       <li key={word.id}>
         <Tooltip currentWord={word} className='Tooltip'>
@@ -50,7 +49,7 @@ class DashboardRoute extends Component {
         </section>
         <section className='dashBoard-course-overview'>
           <h3>Words to practice</h3>
-          <ul className='wordList'>
+          <ul className='wordList' lang="ja">
             {wordListDisplay}
           </ul>
         </section>

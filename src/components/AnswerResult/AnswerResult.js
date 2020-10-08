@@ -14,7 +14,7 @@ class AnswerResult extends Component {
           <section className='answerResults'>
             <div className='feedback'>
               <div className='DisplayFeedback'>
-                <p className='answerResults-paragraph '>The correct translation for <span className="bold">{currentWord} </span>
+                <p className='answerResults-paragraph '>The correct translation for <span className="bold" lang="ja">{currentWord} </span>
                 was <span className='greenTea'>{translation} </span>
                 and you chose {userGuess}!</p>
               </div>
