@@ -13,11 +13,13 @@ class AnswerResult extends Component {
         <div className={`results`}>
           <section className='answerResults'>
             <div className='feedback'>
-              <p className='answerResults-paragraph DisplayFeedback'>The correct translation for <span className="bold">{currentWord} </span>
-              was <span className='greenTea'>{translation} </span>
-              and you chose {userGuess}!</p>
+              <div className='DisplayFeedback'>
+                <p className='answerResults-paragraph '>The correct translation for <span className="bold">{currentWord} </span>
+                was <span className='greenTea'>{translation} </span>
+                and you chose {userGuess}!</p>
+              </div>
             </div>
-            <button onClick={this.props.handleNextTryClick} className='nextWord'>Try another word.</button>
+            <button onClick={this.props.handleNextTryClick} className='nextWord'>Try another word!</button>
             <div className='DisplayScore'>
               <p >Your total score is: {totalScore}</p>
             </div>
