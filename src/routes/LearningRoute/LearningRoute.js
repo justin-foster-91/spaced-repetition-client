@@ -12,7 +12,9 @@ class LearningRoute extends Component {
       rightAnswer: '',
       userAnswer: '',
       isCorrect: null,
-      totalScore: 0
+      totalScore: 0,
+      newScore: 0,
+      error: null
     }
   }
 
@@ -27,7 +29,7 @@ class LearningRoute extends Component {
       .then(res => {
         this.setState({ currentWord: res });
       })
-      .catch(error => console.error(error));
+      .catch(error => this.setState({error}));
   }
 
   componentDidMount() {
@@ -41,16 +43,16 @@ class LearningRoute extends Component {
     WordApiService.postGuess(guess, this.state.currentWord.id)
       .then(res => res.json())
       .then(res => {
-        // console.log(res)
         this.setState({
           isCorrect: res.isCorrect,
           userAnswer: guess,
           rightAnswer: res.answer,
           didSubmit: true,
-          totalScore: res.totalScore
+          totalScore: res.totalScore,
+          newScore: res.totalScore
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => this.setState({error}));
   }
 
   handleNextTryClick = () => {
@@ -67,11 +69,9 @@ class LearningRoute extends Component {
     let userGuess = this.state.didSubmit
       ? <span className={this.state.isCorrect ? 'greenTea' : 'strawberry'}>{this.state.userAnswer}</span>
       : '';
-    let totalScore = this.state.currentWord ? this.state.currentWord.totalScore : '';
+    let totalScore = this.state.didSubmit ? this.state.newScore : this.state.currentWord.totalScore ;
     let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
-    let hiddenSubmission = this.state.didSubmit ? 'hidden' : '';
-    let hiddenAnswerSection = !this.state.didSubmit ? 'hidden' : '';
     let submissionFeedback = this.state.isCorrect
       ? <h2 className='greenTea'>You were correct! :D</h2>
       : <h2 className='strawberry'>Good try, but not quite right :(</h2>;
