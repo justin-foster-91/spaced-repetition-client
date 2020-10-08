@@ -98,7 +98,7 @@ class LearningRoute extends Component {
       <section className='LearningDisplay '>
         <section className='wordCard LearningTitle'>
           {heading}
-          <span className='currentWord'>{currentWord}</span>
+          <span className='currentWord' lang="ja" >{currentWord}</span>
           <p className='DisplayScore'>Your total score is: {totalScore}</p>
         </section>
 
