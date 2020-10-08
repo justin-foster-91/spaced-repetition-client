@@ -35,3 +35,9 @@
 .TitleLink {
   color: rgb(253, 0, 118);
 }
+
+@media only screen and (max-width: 300px) {
+  .Title {
+    font-size: xx-large;
+  }
+}
