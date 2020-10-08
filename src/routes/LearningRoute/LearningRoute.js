@@ -72,34 +72,37 @@ class LearningRoute extends Component {
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
     let hiddenSubmission = this.state.didSubmit ? 'hidden' : '';
     let hiddenAnswerSection = !this.state.didSubmit ? 'hidden' : '';
+    let submissionFeedback = this.state.isCorrect
+      ? <h2 className='greenTea'>You were correct! :D</h2>
+      : <h2 className='strawberry'>Good try, but not quite right :(</h2>;
+    let heading = this.state.didSubmit ? submissionFeedback : <h2 >Translate the word:</h2>
+    let displayForm = this.state.didSubmit
+      ? <AnswerResults
+        userGuess={userGuess}
+        translation={translation}
+        totalScore={totalScore}
+        handleNextTryClick={this.handleNextTryClick}
+        currentWord={currentWord}
+        isCorrect={this.state.isCorrect}
+      />
+      : (<form onSubmit={this.handleSubmit} >
+        <fieldset className={`GuessForm`}>
+          <legend className='legend'>Guess Submission</legend>
+          <label htmlFor='learn-guess-input'>What's the translation for this word?</label><br />
+          <input id='learn-guess-input' name='guess' type='text' required></input><br />
+          <button type='submit' className='submit'>Submit your answer</button>
+        </fieldset>
+      </form>);
+
     return (
       <section className='LearningDisplay '>
         <section className='wordCard LearningTitle'>
-          <h2 >Translate the word:</h2>
+          {heading}
           <span className='currentWord'>{currentWord}</span>
           <p className='DisplayScore'>Your total score is: {totalScore}</p>
         </section>
-        <form onSubmit={this.handleSubmit} >
-          <fieldset className={`GuessForm ${hiddenSubmission}`}>
-            <legend className='legend'>Guess Submission</legend>
-            <label htmlFor='learn-guess-input'>What's the translation for this word?</label><br/>
-            <input id='learn-guess-input' name='guess' type='text' required></input><br />
-            <button type='submit' className='submit'>Submit your answer</button>
-          </fieldset>
-        </form>
-        <section className='ResultDisplay '>
-          <AnswerResults 
-            hiddenAnswerSection={hiddenAnswerSection}
-            // submissionFeedback={submissionFeedback}
-            userGuess={userGuess}
-            translation={translation}
-            totalScore={totalScore}
-            handleNextTryClick={this.handleNextTryClick}
-            currentWord={currentWord}
-            isCorrect={this.state.isCorrect}
-          />
-        </section>
 
+        {displayForm}
         <section className='Scores'>
           <p>You have answered this word correctly {correctlyAnswered} times.</p>
           <p>You have answered this word incorrectly {incorrectlyAnswered} times.</p>
