@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
 import WordApiService from '../../services/word-api-service'
 import Accordion from '../../components/Accordion/Accordion'

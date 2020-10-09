@@ -64,16 +64,13 @@ class LearningRoute extends Component {
   }
 
   render() {
-    // console.log(this.state);
-    // let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
     let currentWord = this.state.currentWord.nextWord || '';
-    
+
     let translation = this.state.didSubmit ? this.state.rightAnswer : '';
     let userGuess = this.state.didSubmit
       ? <span className={this.state.isCorrect ? 'greenTea' : 'strawberry'}>{this.state.userAnswer}</span>
       : '';
     let totalScore = this.state.newScore || this.state.currentWord.totalScore ;
-    // let totalScore = this.state.totalScore ;
     let correctlyAnswered = this.state.currentWord ? this.state.currentWord.wordCorrectCount : '';
     let incorrectlyAnswered = this.state.currentWord ? this.state.currentWord.wordIncorrectCount : '';
     let submissionFeedback = this.state.isCorrect
