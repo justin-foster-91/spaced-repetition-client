@@ -11,6 +11,7 @@
   margin: auto;
   min-height: 50px;
   line-height: 1.6;
+  word-break: break-all;
 }
 .answerResults {
   padding: 5px;
