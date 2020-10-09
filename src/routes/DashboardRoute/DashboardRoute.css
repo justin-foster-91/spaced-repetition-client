@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  padding-top: 7%;
 }
 
 .dashBoard-course-overview h3, .wordList {
@@ -83,3 +83,12 @@ ul {
   display: inline-block;
   border-bottom: 1px dotted black;
 } */
+
+@media only screen and (max-width: 300px) {
+  .Language {
+    font-size: xx-large;
+  }
+  .dashBoard-base {
+    min-width: 0;
+  }
+}

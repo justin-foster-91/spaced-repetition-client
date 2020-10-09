@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 // import Button from '../../components/Button/Button'
 import './DashboardRoute.css'
 import WordApiService from '../../services/word-api-service'
-import Tooltip from '../../components/Tooltip/Tooltip'
+import Accordion from '../../components/Accordion/Accordion'
 import { Link } from 'react-router-dom'
 
 class DashboardRoute extends Component {
   state = {
     words: [],
-    language: {}
+    language: {},
+    isOpen: true
   }
 
   componentDidMount() {
@@ -30,14 +31,31 @@ class DashboardRoute extends Component {
     history.push('/learn')
   }
 
+  onChange = isOpen => {
+    this.setState({
+      isOpen
+    });
+  };
+
   render() {
+    const { isOpen } = this.state;
     const words = this.state.words ? this.state.words : [];
     const wordListDisplay = words.map(word => (
+      
       <li key={word.id}>
-        <Tooltip currentWord={word} className='Tooltip'>
-          <h4 className='wordItem'>{word.original}</h4>
-        </Tooltip>
-      </li>))
+        {/* {console.log(word.id)} */}
+        {/* <Tooltip currentWord={word} className='Tooltip'> */}
+          {/* <h4 className='wordItem'>{word.original}</h4> */}
+        <Accordion isOpen={isOpen} onChange={this.onChange} word={word}>
+          
+          {/* <h4 className='wordItem'>{word.original}</h4>
+            <p>translation: {word.translation}</p> <br/>
+            <p>correct answer count: {word.correct_count}</p> <br/>
+            <p>incorrect answer count: {word.incorrect_count}</p> */}
+        </Accordion>
+        {/* </Tooltip> */}
+      </li>
+      ))
     return (
       <div className='dashBoard-base'>
         <section className='dashBoard-menu'>
@@ -53,7 +71,9 @@ class DashboardRoute extends Component {
             {wordListDisplay}
           </ul>
         </section>
+        <Accordion />
       </div>
+      
     );
   }
 }

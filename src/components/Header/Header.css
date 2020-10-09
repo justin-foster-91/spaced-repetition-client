@@ -12,6 +12,7 @@
   background: rgb(254, 214, 255);
   border: 1px solid black;
   border-radius: 5px;
+  z-index: -1;
 }
 
 .username {
