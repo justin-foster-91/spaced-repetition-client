@@ -45,7 +45,7 @@ class AccordionItem extends React.Component {
         opened
       }
     } = this
-    console.log('Word: ', original);
+    // console.log('Word: ', original);
 
     return (
       <div

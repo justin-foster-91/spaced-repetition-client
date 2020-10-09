@@ -60,7 +60,7 @@ const AuthApiService = {
     })
   },
   postGuess(guess, wordId) {
-    console.log(guess, wordId)
+    // console.log(guess, wordId)
     return fetch(`${config.API_ENDPOINT}/words/${wordId}/guess`, {
       method: 'POST',
       headers: {

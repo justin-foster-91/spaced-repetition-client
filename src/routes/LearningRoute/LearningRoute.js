@@ -64,7 +64,7 @@ class LearningRoute extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     // let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
     let currentWord = this.state.currentWord.nextWord || '';
     
