@@ -10,9 +10,10 @@ body {
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center; 
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-position: 50% 50%; 
+  background-size: auto;
   background-image: url('./Images/670320.jpg');
 }
 
