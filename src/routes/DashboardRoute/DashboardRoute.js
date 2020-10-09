@@ -41,19 +41,9 @@ class DashboardRoute extends Component {
     const { isOpen } = this.state;
     const words = this.state.words ? this.state.words : [];
     const wordListDisplay = words.map(word => (
-      
       <li key={word.id}>
-        {/* {console.log(word.id)} */}
-        {/* <Tooltip currentWord={word} className='Tooltip'> */}
-          {/* <h4 className='wordItem'>{word.original}</h4> */}
         <Accordion isOpen={isOpen} onChange={this.onChange} word={word}>
-          
-          {/* <h4 className='wordItem'>{word.original}</h4>
-            <p>translation: {word.translation}</p> <br/>
-            <p>correct answer count: {word.correct_count}</p> <br/>
-            <p>incorrect answer count: {word.incorrect_count}</p> */}
         </Accordion>
-        {/* </Tooltip> */}
       </li>
       ))
     return (

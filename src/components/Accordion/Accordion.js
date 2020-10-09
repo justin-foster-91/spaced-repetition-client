@@ -2,34 +2,13 @@ import React from 'react'
 import './Accordion.scss'
 
 
-const paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet natus sint provident vel ab reprehenderit cum soluta, suscipit facere nisi sed earum repellendus fuga debitis, nam molestiae minima voluptates possimus.'
-{/* <p>translation: {word.translation}</p> <br/>
-<p>correct answer count: {word.correct_count}</p> <br/>
-<p>incorrect answer count: {word.incorrect_count}</p> */}
-
-const data = [
-  {
-    title: 'Pricing plans',
-    paragraph
-  },
-  {
-    title: 'How to apply',
-    paragraph
-  },
-  {
-    title: 'Purchasing process',
-    paragraph
-  },
-  {
-    title: 'Usage guides',
-    paragraph
-  }
-]
-{/* <h4 className='wordItem'>{word.original}</h4> */}
-
 class Accordion extends React.Component {
   render () {
-    let {original, translation, correct_count, incorrect_count} = this.props.word
+    let {original, 
+      translation, 
+      correct_count, 
+      incorrect_count
+    } = this.props.word
     return (
       <div {...{ className: 'wrapper' }}>
         <ul {...{ className: 'accordion-list' }}>
