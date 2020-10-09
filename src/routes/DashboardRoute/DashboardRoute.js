@@ -60,9 +60,7 @@ class DashboardRoute extends Component {
             {wordListDisplay}
           </ul>
         </section>
-        <Accordion />
       </div>
-      
     );
   }
 }
