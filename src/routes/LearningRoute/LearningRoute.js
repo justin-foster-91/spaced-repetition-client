@@ -43,7 +43,6 @@ class LearningRoute extends Component {
     WordApiService.postGuess(guess, this.state.currentWord.id)
       .then(res => res.json())
       .then(res => {
-        console.log('res', res);
         this.setState({
           isCorrect: res.isCorrect,
           userAnswer: guess,
@@ -66,7 +65,9 @@ class LearningRoute extends Component {
 
   render() {
     console.log(this.state);
-    let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
+    // let currentWord = this.state.currentWord ? this.state.currentWord.nextWord : '';
+    let currentWord = this.state.currentWord.nextWord || '';
+    
     let translation = this.state.didSubmit ? this.state.rightAnswer : '';
     let userGuess = this.state.didSubmit
       ? <span className={this.state.isCorrect ? 'greenTea' : 'strawberry'}>{this.state.userAnswer}</span>
