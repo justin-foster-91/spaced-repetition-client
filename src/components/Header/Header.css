@@ -5,6 +5,11 @@
   right: 0;
   text-align: right;
   font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: rgb(231, 227, 227);
+
 }
 
 .NavLink {
@@ -12,6 +17,10 @@
   border: 1px solid black;
   border-radius: 5px;
   z-index: -1;
+}
+
+.NavLink:hover {
+  color: red;
 }
 
 .username {
